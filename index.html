@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compiladores</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body>
+    <div class="search">
+        <h2>ITESO</h2>
+        <h4>Practica compiladores</h4>
+        <form id="search" action="#">
+            <label for="subject">Subject:</label><br>
+            <input type="text" id="subject" name="subject">
+            <input type="submit" value="Search News">
+        </form>
+    </div>
+    <br>
+    <div class="grid" id="news-container">  
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="assets/scripts/main.js" type="module"></script>
+
+    <script id="news-template" type="text/x-handlebars">
+        {{#each news}}
+            <div class="news-item col-phv-12 col-phh-12 col-t-6 col-d-4">
+                <img src="{{urlToImage}}" />
+                <h2>{{title}}</h2>
+                <p>{{description}}</p>
+                <a href="{{url}}" target="_blank">Ver más</a>
+            </div>
+        {{/each}}
+    </script>
+
+</body>
+</html>
